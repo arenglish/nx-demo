@@ -17,11 +17,8 @@ if (!project) {
   process.exit(1);
 }
 
-const distPath = project.architect.build.options.outputPath;
-const npmrc = fs.readFileSync(__dirname + '/../.npmrc').toString().replace('$NPM_TOKEN', process.env.NPM_TOKEN);
-fs.writeFileSync(__dirname + '/../.npmrc', npmrc, { encoding: 'utf-8' });
-
-process.chdir(__dirname + '/../' + distPath);
+const distPath = __dirname + '/../' + project.architect.build.options.outputPath;
+process.chdir(distPath);
 
 const package = {
   name: rootPackage.name.replace('nx-demo', app),
@@ -29,8 +26,9 @@ const package = {
   license: "MIT"
 }
 
-fs.writeFileSync('./package.json', JSON.stringify(package), { encoding: 'utf-8'});
+fs.writeFileSync('package.json', JSON.stringify(package), { encoding: 'utf-8'});
 
-child.execSync(`npm publish --access public`, { stdio: 'inherit' });
+child.execSync('npm pack', { stdio: 'inherit' });
+// child.execSync('npm publish --access public', { stdio: 'inherit' });
 
 

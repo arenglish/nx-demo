@@ -13,7 +13,14 @@
       "customCommands": ["npm run publishApp -- $project $version"]
     }
   ],
-  "publish": ["@semantic-release/github"],
+  "publish": [
+    {
+      "path": "@semantic-release/github",
+      "assets": [
+        {"path": "dist/apps/demo/*.tgz", "label": "Demo App Artifact"}
+      ]
+    }
+  ],
   "success": false,
   "fail": false,
   "branch": "master",
