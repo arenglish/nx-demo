@@ -1,11 +1,18 @@
 {
   "analyzeCommits": "@semantic-release/commit-analyzer",
   "verifyConditions": "",
-  "prepare": [{
-    "path": "./tools/semantic-release-plugins/nx",
+  "prepare": [
+    {
+    "path": "nx-semantic-release",
     "targets": ["build"],
     "extraArgs": ["--prod"]
-  }],
+  },
+    {
+      "path": "@semantic-release/git",
+      "assets": ["package.json", "CHANGELOG.md"]
+    }
+  ],
+  "publish": ["@semantic-release/github"],
   "success": false,
   "fail": false,
   "branch": "master",

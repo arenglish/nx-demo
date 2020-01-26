@@ -1,6 +1,6 @@
 {
   "name": "nx-demo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -24,12 +24,12 @@
     "update": "ng update @nrwl/workspace",
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
+    "semantic-release": "semantic-release",
     "dep-graph": "nx dep-graph",
     "help": "nx help"
   },
   "private": true,
   "dependencies": {
-    "@nrwl/angular": "8.7.1",
     "@angular/animations": "^8.2.0",
     "@angular/common": "^8.2.0",
     "@angular/compiler": "^8.2.0",
@@ -38,6 +38,7 @@
     "@angular/platform-browser": "^8.2.0",
     "@angular/platform-browser-dynamic": "^8.2.0",
     "@angular/router": "^8.2.0",
+    "@nrwl/angular": "^8.11.2",
     "core-js": "^2.5.4",
     "rxjs": "~6.4.0",
     "zone.js": "^0.9.1"
@@ -47,9 +48,10 @@
     "@angular/cli": "8.3.3",
     "@angular/compiler-cli": "^8.2.0",
     "@angular/language-service": "^8.2.0",
-    "@nrwl/cypress": "8.7.1",
+    "@nrwl/cypress": "^8.11.2",
     "@nrwl/jest": "8.7.1",
     "@nrwl/workspace": "8.7.1",
+    "@semantic-release/git": "^8.0.0",
     "@types/jest": "24.0.9",
     "@types/node": "~8.9.4",
     "codelyzer": "~5.0.1",
@@ -58,6 +60,7 @@
     "eslint": "6.1.0",
     "jest": "24.1.0",
     "jest-preset-angular": "7.0.0",
+    "nx-semantic-release": "^0.1.0",
     "prettier": "1.18.2",
     "semantic-release": "^16.0.3",
     "ts-jest": "24.0.0",
