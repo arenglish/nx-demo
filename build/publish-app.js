@@ -18,6 +18,8 @@ if (!project) {
 }
 
 const distPath = project.architect.build.options.outputPath;
+fs.writeFileSync('../.npmrc', `registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}`);
+
 process.chdir(__dirname + '/../' + distPath);
 
 const package = {
