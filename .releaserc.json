@@ -1,7 +1,11 @@
 {
   "analyzeCommits": "@semantic-release/commit-analyzer",
   "verifyConditions": "",
-  "prepare": ["./tools/semantic-release-plugins/nx"],
+  "prepare": [{
+    "path": "./tools/semantic-release-plugins/nx",
+    "targets": ["build"],
+    "extraArgs": ["--prod"]
+  }],
   "success": false,
   "fail": false,
   "branch": "master",

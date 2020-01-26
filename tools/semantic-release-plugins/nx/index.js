@@ -1,4 +1,4 @@
-const { verifyNx, resolveConfigNx } = require("./lib");
+const { prepareNx, verifyNx, resolveConfigNx } = require("./lib");
 
 let verified;
 
@@ -17,7 +17,7 @@ async function prepare(pluginConfig, context) {
     verified = true;
   }
 
-  return prepareNgx(pluginConfig, context);
+  return prepareNx(pluginConfig, context);
 }
 
 module.exports = { verifyConditions, prepare };

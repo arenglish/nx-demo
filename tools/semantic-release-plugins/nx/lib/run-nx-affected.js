@@ -1,15 +1,17 @@
 const child = require('child_process');
-const lastVersionCommit = require('./get-commit-of-last-version');
+const getNxBaseHeadRefArgs = require('./get-nx-base-head-ref-args');
 
-module.exports = function runNxAffected(target, options, context) {
+module.exports = function runNxAffected(options, context) {
     const { logger } = context;
 
-    const baseCommit = lastVersionCommit(options, context);
-    const command = `nx affected:${target}`;
+    options.targets.forEach(target => {
+      const command = `nx affected:${target} ${getNxBaseHeadRefArgs(options, context)} ${options.extraArgs.join(' ')}`;
+      console.log(command);
 
-    logger.log(`Running nx:affected on target ${target}`);
+      logger.log(`Running nx:affected on target ${target}`);
 
-    child.execSync(command, {
+      child.execSync(command, {
         stdio: "inherit"
-    });
+      });
+    })
 };

@@ -1,4 +1,5 @@
 const child = require('child_process');
+const getNxBaseHeadRefArgs = require('./get-nx-base-head-ref-args');
 
 module.exports = function runCustomCommandsForAffected(options, context) {
     const { logger } = context;
@@ -12,7 +13,7 @@ module.exports = function runCustomCommandsForAffected(options, context) {
         logger.log('No projects specified... will run custom commands over all affected projects');
     }
 
-    let affectedProjects = child.execSync('nx affected:plain', { stdio: 'inherit' }).split(' ');
+    let affectedProjects = child.execSync(`nx affected:plain ${getNxBaseHeadRefArgs(options, context)}`).toString().split(' ');
     affectedProjects = options.projects.length === 0 ? affectedProjects : affectedProjects.filter(p => options.projects.includes(p));
 
     if (affectedApps.length === 0) {
