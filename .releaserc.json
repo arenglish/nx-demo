@@ -3,14 +3,14 @@
   "verifyConditions": "",
   "prepare": [
     {
+      "path": "@semantic-release/git",
+      "assets": ["package.json", "CHANGELOG.md"]
+    },
+    {
       "path": "nx-semantic-release",
       "targets": ["build"],
       "extraArgs": ["--prod"],
       "customCommands": ["npm run publishApp -- $project $version"]
-    },
-    {
-      "path": "@semantic-release/git",
-      "assets": ["package.json", "CHANGELOG.md"]
     }
   ],
   "publish": ["@semantic-release/github"],
