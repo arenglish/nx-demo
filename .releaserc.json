@@ -6,7 +6,7 @@
       "path": "nx-semantic-release",
       "targets": ["build"],
       "extraArgs": ["--prod"],
-      "customCommands": ["npm run publishApp -- $project 1.0.0"]
+      "customCommands": ["npm run publishApp -- $project $version"]
     },
     {
       "path": "@semantic-release/git",
