@@ -18,8 +18,7 @@ if (!project) {
 }
 
 const distPath = project.architect.build.options.outputPath;
-
-const npmrc = fs.readFileSync(__dirname + '/../.npmrc').toString().replace('${NPM_TOKEN}', process.env.NPM_TOKEN);
+const npmrc = fs.readFileSync(__dirname + '/../.npmrc').toString().replace('$NPM_TOKEN', process.env.NPM_TOKEN);
 fs.writeFileSync(__dirname + '/../.npmrc', npmrc, { encoding: 'utf-8' });
 
 process.chdir(__dirname + '/../' + distPath);
