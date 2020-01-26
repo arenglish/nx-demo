@@ -21,13 +21,13 @@ const distPath = project.architect.build.options.outputPath;
 process.chdir(__dirname + '/../' + distPath);
 
 const package = {
-  name: `@${rootPackage.name}/${app}`,
+  name: `${rootPackage.name}/${app}`,
   version: version,
   license: "MIT"
 }
 
 fs.writeFileSync('./package.json', JSON.stringify(package), { encoding: 'utf-8'});
 
-child.execSync(`npm publish`, { stdio: 'inherit' });
+child.execSync(`npm publish --access public`, { stdio: 'inherit' });
 
 
