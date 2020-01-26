@@ -21,7 +21,7 @@ const distPath = project.architect.build.options.outputPath;
 process.chdir(__dirname + '/../' + distPath);
 
 const package = {
-  name: `${rootPackage.name}/${app}`,
+  name: rootPackage.name.replace('nx-demo', app),
   version: version,
   license: "MIT"
 }

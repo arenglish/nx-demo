@@ -1,5 +1,5 @@
 {
-  "name": "@arenglish",
+  "name": "@arenglish/nx-demo",
   "version": "1.1.0",
   "license": "MIT",
   "scripts": {
