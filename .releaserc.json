@@ -1,0 +1,9 @@
+{
+  "analyzeCommits": "@semantic-release/commit-analyzer",
+  "verifyConditions": "",
+  "prepare": ["./tools/semantic-release-plugins/nx"],
+  "success": false,
+  "fail": false,
+  "branch": "master",
+  "repositoryUrl": "https://github.com/arenglish/nx-demo.git"
+}
