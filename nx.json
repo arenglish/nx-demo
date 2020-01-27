@@ -20,6 +20,13 @@
     "contacts-e2e": {
       "tags": [],
       "implicitDependencies": ["contacts"]
+    },
+    "notes": {
+      "tags": []
+    },
+    "notes-e2e": {
+      "tags": [],
+      "implicitDependencies": ["notes"]
     }
   }
 }
