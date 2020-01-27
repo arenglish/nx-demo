@@ -17,7 +17,8 @@
     {
       "path": "@semantic-release/github",
       "assets": [
-        {"path": "dist/apps/demo/*.tgz", "label": "Demo App Artifact"}
+        {"path": "dist/apps/demo/*.tgz", "label": "Demo App Artifact"},
+        {"path": "dist/apps/contacts/*.tgz", "label": "Contacts App Artifact"}
       ]
     }
   ],
